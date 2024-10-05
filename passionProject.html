@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gliding Into Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <style>
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader img {
+    width: 100px;
+    height: 100px;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 20px; /* Adjust based on your gradient size */
+    }
+}
+
+body {
+    font-family: "Gill Sans", sans-serif;
+    background: linear-gradient(135deg, #f0e8ff 25%, transparent 25%, transparent 50%, #f0e8ff 50%, #f0e8ff 75%, transparent 75%, transparent), linear-gradient(to bottom, #f0e8ff, #d4caf9);
+    background-size: 20px 20px, 100%; /* The first gradient controls the diagonal lines; the second controls the overall gradient */
+    margin: 0;
+    padding: 0;
+    color: #3f3f3f;
+    line-height: 1.6;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 2s ease-in; /* Transition effect */
+        
+    /* Add animation for the rotating background */
+    animation: rotate 3s linear infinite; /* Adjust timing for rotation speed */
+}
+
+body.fade-in {
+    opacity: 1; /* End with full opacity */
+}
+
+
+      .workshops-block {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(to right, #f8c8d0, #f0e8ff);
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        transition: transform 0.3s ease; /* Smooth scaling transition */
+      }
+
+      .workshops-block:hover {
+        transform: scale(1.03); /* Slight zoom on hover */
+      }
+
+      .workshops-block img {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Image hover effects */
+      }
+
+      .workshops-block img:hover {
+        transform: scale(1.05); /* Image zoom on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .workshops-block img:active {
+        transform: scale(0.96); /* Image zoom on hover */
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      .content-block {
+    display: flex;
+    flex-direction: row; /* Keep them in a row on larger screens */
+    flex-wrap: wrap; /* Allow wrapping */
+    width: 100%; /* Full width */
+    gap: 20px; /* Space between blocks */
+}
+.image-block, .article-block {
+    flex: 1; /* Allow these blocks to grow/shrink */
+    min-width: 300px; /* Set a minimum width to maintain layout */
+    /* Other styles remain unchanged */
+}
+
+      /* Image block with hover effect */
+      .image-block {
+    background: linear-gradient(to right, #f8e1ff, #b3c7e6);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 1 1 45%; /* Allow it to grow and shrink, with a base width of 45% */
+    text-align: center;
+    transition: transform 0.4s ease; /* Smooth hover animation */
+}
+
+      .image-block:hover {
+        transform: scale(1.05); /* Image enlarges on hover */
+      }
+
+      .article-block {
+    background: linear-gradient(to right, #f8d3de, #e6c6e7);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 1 1 45%; /* Allow it to grow and shrink, with a base width of 45% */
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .image-block, .article-block {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+}
+
+      .article-block:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+      }
+
+      header {
+    background: linear-gradient(0deg, #f2a6c8, #e6b2d3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1b2d4f;
+    padding: 30px 40px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    gap: 22px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+header:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+
+      header a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header h1 {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin: 0;
+  color: white; /* Set the color directly here */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease, transform 0.3s ease-in-out; /* Combine transitions */
+}
+
+      header img {
+        transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+      }
+
+      header h1:hover {
+  color: #f7d1dc; /* Change color on hover */
+  transform: scale(1.03); /* Image zoom on hover */
+}
+
+      header h1:active {
+        transform: scale(0.97); /* Image zoom on hover */
+      }
+
+      header img:hover {
+        transform: scale(1.03); /* Image zoom on hover */
+      }
+
+      header img:active {
+        transform: scale(0.97); /* Image zoom on hover */
+      }
+      
+      nav {
+    background: linear-gradient(to right, #d3c7ef, #cdd4ef);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 1100px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for nav */
+}
+
+nav:hover {
+    background: linear-gradient(to right, #b1a6dc, #b1bde6); /* Gradient changes on hover */
+    transform: scale(1.05); /* Scale up when hovered */
+}
+
+/* Styles for the unordered list */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for horizontal layout */
+    padding: 0; /* Remove default padding */
+    gap: 20px; /* Space between items */
+}
+
+/* Styles for list items */
+nav ul li {
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+nav ul li:hover {
+    transform: scale(1.05); /* Scale up the entire list item */
+}
+
+nav ul li:active {
+    transform: scale(0.95); /* Further squish on click */
+}
+
+/* Styles for anchor tags within list items */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #1b2d4f; /* Text color */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+nav ul li a:hover {
+    color: #0077b6; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.4); /* Optional: Add background color on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+
+      footer {
+    background: linear-gradient(135deg, #25385b, #9989d2); /* Example gradient */
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 30px 30px 0 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+      footer p {
+        margin: 0;
+        font-size: 1.1em;
+      }
+
+      .carousel {
+    position: relative;
+    overflow: hidden; /* Hide overflow for scrolling effect */
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.carousel-wrapper {
+    display: flex; /* Use flexbox for horizontal layout */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%; /* Make images responsive */
+    flex: 0 0 100%; /* Allow each image to take the full width */
+    border-radius: 20px; /* Keep border-radius */
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 98%; /* Slightly reduced width */
+    display: flex;
+    justify-content: space-between; /* Space the buttons evenly */
+    transform: translateY(-50%); /* Center vertically on the image */
+    padding: 0 15px; /* Adjust padding on the left and right */
+}
+
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.5s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.15); /* Slightly enlarge on hover */
+}
+
+.carousel-button:active {
+    background-color: rgb(242, 235, 235);
+    transform: scale(0.95); /* Slightly enlarge on hover */
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px; /* Moved higher by increasing the bottom value */
+    right: 30px; /* Moved left by decreasing the right value */
+    background-color: #a3c3ba; /* Mint color */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Softer edges */
+    padding: 12px 18px; /* Increased padding for a bigger button */
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em; /* Slightly larger font size */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    animation: fadeIn 0.5s ease; /* Optional: Add fade-in effect */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start transparent */
+        transform: translateY(20px); /* Start lower */
+    }
+    100% {
+        opacity: 1; /* Fully opaque */
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+.back-to-top:hover {
+    background-color: #8cbaad; /* Darker green on hover */
+    transform: scale(1.1); /* Scale up on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background color, scaling, and shadow */
+}
+
+/* Optional active state for when button is clicked */
+.back-to-top:active {
+    transform: scale(0.95); /* Slightly shrink when clicked */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
+}
+
+
+    </style>
+</head>
+<body>  
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="/download-icon-website-buffer-loader-a-spinning-circle-to-download-information-on-the-website-png copy.png" alt="Loading..." />
+  </div>
+
+  <header>
+    <a href="passionProject.html">
+        <img src="/SlidingIntoTechLogo.png" alt="" width="150px" />
+    </a>
+    <a href="passionProject.html">
+        <h1>Gliding Into Tech</h1>
+    </a>
+</header>
+
+
+<nav>
+  <ul>
+    <li><a href="/passionProject.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="/AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+    <li><a href="/Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+</nav>
+
+
+    <main>
+            <div class="workshops-block">
+              <h1>Workshops</h1>
+              <a href="/TechSavvySeniors.html">
+                  <img src="/TechSavvySeniorsLogo.png" alt="Tech Savvy Seniors Logo" width="300px" />
+              </a>
+              <a href="/StartingFromScratch.html">
+                  <img src="/StartingFromScratchLogo.PNG" alt="Starting From Scratch Logo" width="300px" />
+              </a>
+              <a href="/GirlsWhoCode.html">
+                  <img src="/GirlsWhoCodeLogo.PNG" alt="Girls Who Code Logo" width="300px" />
+              </a>
+          </div>
+      
+      <div class="content-block">
+          <div class="image-block">
+              <h2>My Gallery</h2>
+              <div class="carousel">
+                <div class="carousel-wrapper">
+                    <img src="/GiadaJimenez2.png" class="active" alt="Image 1">
+                    <img src="/GiadaJimenez1.PNG" alt="Image 2">
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+            
+          </div>
+          <div class="article-block">
+            <h1>What is Gliding Into Tech?</h1>
+            <h3>
+                Gliding Into Tech is an empowering organization founded by Giada Jimenez, a passionate Latina in computer science. Inspired by her journey in coding, which began in ninth grade, Giada is dedicated to helping others harness the power of technology. Through her involvement with the school’s Girls Who Code Club and the creation of multiple workshops, she has focused on making technology accessible and engaging for all ages.
+            </h3>
+            <h3>
+                One of her key initiatives, Tech Savvy Seniors, is a comprehensive 10-lesson workshop designed to help seniors navigate their smartphones with confidence. Participants learn essential topics such as artificial intelligence, various software applications, and smartphone settings, enabling them to connect with loved ones and the digital world more effectively.
+            </h3>
+            <h3>
+                In her Starting from Scratch workshop, Giada introduces children to the exciting world of coding using the Scratch game engine. Here, she teaches block coding principles, allowing young creators to develop their own tangible projects and explore their imaginations.
+            </h3>
+            <h3>
+                With a background as a figure skater, Giada embodies the spirit of grace and determination, which is reflected in the name Gliding Into Tech. She coded this website from scratch using HTML, CSS, and AI, showcasing her skills while giving back to her community. Through all her efforts, Giada aims to inspire and empower individuals by fostering a love for technology and innovation.
+            </h3>
+          </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Copyright & copy: 2024 Gliding Into Tech. All rights reserved.</p>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fa-solid fa-circle-up"></i> Back to Top</button>
+    <script>
+  // JavaScript for opacity transition
+  window.onload = function() {
+      document.body.classList.add("fade-in");
+
+      // Hide loader after 2 seconds
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+      }, 2000);
+    };
+
+    // JavaScript for carousel functionality
+    let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel img");
+const carouselWrapper = document.querySelector(".carousel-wrapper");
+
+// Clone the first and last slides for seamless looping
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+carouselWrapper.appendChild(firstClone); // Append the clone of the first slide at the end
+carouselWrapper.insertBefore(lastClone, slides[0]); // Prepend the clone of the last slide at the beginning
+
+// Update the total number of slides to include the clones
+const totalSlides = slides.length + 2;
+
+// Function to update the carousel to the desired slide
+function showSlide(index) {
+    // Ensure the currentSlide wraps around correctly
+    currentSlide = index;
+
+    // Apply the transform for sliding
+    const offset = -currentSlide * 100;
+    carouselWrapper.style.transform = `translateX(${offset}%)`;
+
+    // Handle seamless looping when scrolling right (from the last real slide to the first)
+    if (currentSlide === totalSlides - 1) { // If it's on the cloned first slide
+        setTimeout(() => {
+            carouselWrapper.style.transition = 'none'; // Disable transition for instant reset
+            currentSlide = 1; // Reset to the actual first slide
+            carouselWrapper.style.transform = `translateX(-100%)`; // Instantly go to the first real slide
+        }, 500); // Wait for the transition to complete
+    }
+
+    // Handle seamless looping when scrolling left (from the first real slide to the last)
+    else if (currentSlide === 0) { // If it's on the cloned last slide
+        setTimeout(() => {
+            carouselWrapper.style.transition = 'none'; // Disable transition for instant reset
+            currentSlide = totalSlides - 2; // Reset to the actual last slide
+            const lastOffset = -currentSlide * 100;
+            carouselWrapper.style.transform = `translateX(${lastOffset}%)`; // Instantly go to the last real slide
+        }, 500); // Wait for the transition to complete
+    } else {
+        // Enable smooth transitions for normal scrolling
+        carouselWrapper.style.transition = 'transform 0.5s ease';
+    }
+}
+
+// Function for going to the next slide
+function nextSlide() {
+    showSlide(currentSlide + 1); // Move to the next slide
+}
+
+// Function for going to the previous slide
+function prevSlide() {
+    showSlide(currentSlide - 1); // Move to the previous slide
+}
+
+// Set interval for automatic sliding
+setInterval(nextSlide, 8000); // Change slides every 8 seconds
+
+
+// Back to Top button functionality
+const backToTopBtn = document.getElementById('back-to-top');
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = 'block'; // Show the button when scrolling down
+    } else {
+        backToTopBtn.style.display = 'none'; // Hide the button when at the top
+    }
+};
+
+
+    backToTopBtn.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+    </script>
+    <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Tech Savvy Seniors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <style>
+
+      /* CSS Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth; /* Smooth scrolling */
+      }
+
+      /* Loader */
+      #loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #loader img {
+        width: 100px;
+        height: 100px;
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+      }
+
+      @keyframes rotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 20px; /* Adjust based on your gradient size */
+    }
+}
+
+      body {
+        font-family: "Gill Sans", sans-serif;
+        background: linear-gradient(135deg, #f0e8ff 25%, transparent 25%, transparent 50%, #f0e8ff 50%, #f0e8ff 75%, transparent 75%, transparent), linear-gradient(to bottom, #f0e8ff, #d4caf9);
+    background-size: 20px 20px, 100%; /* The first gradient controls the diagonal lines; the second controls the overall gradient */
+        margin: 0;
+        padding: 0;
+        color: #3f3f3f;
+        line-height: 1.6;
+        opacity: 0; /* Start with opacity 0 */
+        transition: opacity 2s ease-in; /* Transition effect */
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        min-height: 100vh; /* Ensure body takes full height */
+        max-width: 100%; /* Prevent content from exceeding the width of the screen */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        animation: rotate 3s linear infinite; /* Adjust timing for rotation speed */
+      }
+
+
+      body.fade-in {
+        opacity: 1; /* End with full opacity */
+      }
+
+      .workshops-block {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(to right, #f8c8d0, #f0e8ff);
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        transition: transform 0.3s ease; /* Smooth scaling transition */
+      }
+
+      .workshops-block:hover {
+        transform: scale(1.03); /* Slight zoom on hover */
+      }
+
+      .workshops-block img {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Image hover effects */
+      }
+
+      .workshops-block img:hover {
+        transform: scale(1.05); /* Image zoom on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px; /* Limit the main content width */
+        margin: 20px auto;
+        flex: 1; /* Allow main to grow and fill available space */
+      }
+
+      .content-block {
+    display: flex;
+    gap: 20px; /* Space between blocks */
+    width: 100%;
+    flex-wrap: wrap; /* Allow blocks to wrap to the next line */
+}
+
+      /* Image block with hover effect */
+      .image-block {
+    background: linear-gradient(to right, #f8e1ff, #b3c7e6);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 1 1 300px; /* Allow to grow/shrink with a minimum width of 300px */
+    text-align: center;
+    transition: transform 0.4s ease; /* Smooth hover animation */
+}
+
+.image-block img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 350px; /* Optional: Set a max width for larger screens */
+}
+
+      .image-block:hover {
+        transform: scale(1.05); /* Image enlarges on hover */
+      }
+
+      .article-block {
+    background: linear-gradient(to right, #f8d3de, #e6c6e7);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 2 1 300px; /* Allow to grow/shrink with a minimum width of 300px */
+    transition: transform 0.3s ease;
+}
+
+      .article-block:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+      }
+
+      @media (max-width: 768px) {
+    .image-block, .article-block {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+}
+
+header {
+    background: linear-gradient(0deg, #f2a6c8, #e6b2d3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1b2d4f;
+    padding: 30px 40px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    gap: 22px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+header:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+
+      header a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header h1 {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin: 0;
+  color: white; /* Set the color directly here */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease, transform 0.3s ease-in-out; /* Combine transitions */
+}
+
+      header img {
+        transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+      }
+
+      header h1:hover {
+  color: #f7d1dc; /* Change color on hover */
+  transform: scale(1.03); /* Image zoom on hover */
+}
+
+      header h1:active {
+        transform: scale(0.97); /* Image zoom on hover */
+      }
+
+      header img:hover {
+        transform: scale(1.03); /* Image zoom on hover */
+      }
+
+      header img:active {
+        transform: scale(0.97); /* Image zoom on hover */
+      }
+
+
+      nav {
+    background: linear-gradient(to right, #d3c7ef, #cdd4ef);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 1100px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for nav */
+}
+
+nav:hover {
+    background: linear-gradient(to right, #b1a6dc, #b1bde6); /* Gradient changes on hover */
+    transform: scale(1.05); /* Scale up when hovered */
+}
+
+/* Styles for the unordered list */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for horizontal layout */
+    padding: 0; /* Remove default padding */
+    gap: 20px; /* Space between items */
+}
+
+/* Styles for list items */
+nav ul li {
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+nav ul li:hover {
+    transform: scale(1.05); /* Scale up the entire list item */
+}
+
+nav ul li:active {
+    transform: scale(0.95); /* Further squish on click */
+}
+
+/* Styles for anchor tags within list items */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #1b2d4f; /* Text color */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+nav ul li a:hover {
+    color: #0077b6; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.4); /* Optional: Add background color on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+      footer {
+        background: linear-gradient(135deg, #25385b, #9989d2); /* Example gradient */
+        color: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+        border-radius: 30px 30px 0 0;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        max-width: 100%; /* Prevent footer from exceeding the screen width */
+        overflow-x: hidden; /* Prevent horizontal scrolling on footer */
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1.1em;
+      }
+
+      .back-to-top {
+    position: fixed;
+    bottom: 40px; /* Moved higher by increasing the bottom value */
+    right: 30px; /* Moved left by decreasing the right value */
+    background-color: #a3c3ba; /* Mint color */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Softer edges */
+    padding: 12px 18px; /* Increased padding for a bigger button */
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em; /* Slightly larger font size */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    animation: fadeIn 0.5s ease; /* Optional: Add fade-in effect */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start transparent */
+        transform: translateY(20px); /* Start lower */
+    }
+    100% {
+        opacity: 1; /* Fully opaque */
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+.back-to-top:hover {
+    background-color: #8cbaad; /* Darker green on hover */
+    transform: scale(1.1); /* Scale up on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background color, scaling, and shadow */
+}
+
+/* Optional active state for when button is clicked */
+.back-to-top:active {
+    transform: scale(0.95); /* Slightly shrink when clicked */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
+}
+
+    </style>
+<body>
+        <!-- Loader -->
+        <div id="loader">
+          <img src="/download-icon-website-buffer-loader-a-spinning-circle-to-download-information-on-the-website-png copy.png" alt="Loading..." />
+        </div>
+
+        <header>
+          <a href="passionProject.html">
+              <img src="/SlidingIntoTechLogo.png" alt="" width="150px" />
+          </a>
+          <a href="passionProject.html">
+              <h1>Gliding Into Tech</h1>
+          </a>
+      </header>
+  
+      <nav>
+        <ul>
+          <li><a href="/passionProject.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="/AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+          <li><a href="/Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+  
+    <main>
+      <div class="content-block">
+          <div class="image-block">
+              <h2>Tech Savvy Seniors</h2>
+              <img src="TechSavvySeniorsLogo.png" alt="Tech Savvy Seniors Logo" width="350"/>
+          </div>
+          <div class="article-block">
+            <h1>Welcome to Tech Savvy Seniors</h1>
+            <h3>
+                Tech Savvy Seniors is a workshop dedicated to helping older adults navigate the world of technology with ease. Our goal is to make technology simple, accessible, and enjoyable for everyone. We cover topics like using smartphones, understanding basic software, online security, and more.
+            </h3>
+            <h3>
+                Our sessions are designed to be hands-on and interactive, allowing participants to ask questions and learn at their own pace. Whether you want to learn how to video chat with loved ones, browse the internet safely, or explore apps, we’re here to guide you every step of the way!
+            </h3>
+            <h3>
+                Join us at Tech Savvy Seniors to discover how technology can make your life easier and more connected. We’re excited to help you become more confident and comfortable in the digital world.
+            </h3>
+          </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Copyright & copy: 2024 Gliding Into Tech. All rights reserved.</p>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fa-solid fa-circle-up"></i> Back to Top</button>
+    
+
+    <script>
+      // Fade-in effect and loader
+      window.onload = function() {
+          document.body.classList.add("fade-in");
+
+          // Hide loader after 2 seconds
+          setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+          }, 2000);
+      };
+             // Back to Top button functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = 'block'; // Show the button when scrolling down
+        } else {
+            backToTopBtn.style.display = 'none'; // Hide the button when at the top
+        }
+    };
+
+    backToTopBtn.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+    </script>
+        <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
