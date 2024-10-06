@@ -146,14 +146,21 @@ body {
     max-width: 350px; /* Optional: Set a maximum width */
   }
 
-      .article-block {
-        background: linear-gradient(to right, #f8d3de, #e6c6e7);
-        border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        padding: 20px;
-        flex: 2;
-        transition: transform 0.3s ease;
-      }
+  .article-block {
+    background: linear-gradient(to right, #f8d3de, #e6c6e7);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 2 1 500px; /* Flex-grow, flex-shrink, and base width */
+    transition: transform 0.3s ease;
+}
+.article-block h1 {
+    text-align: center; /* Center the text */
+}
+.article-block h3 {
+  text-indent: 30px; /* Indent each paragraph */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
 
       .article-block:hover {
         transform: translateY(-5px); /* Lift effect on hover */
@@ -351,15 +358,18 @@ nav ul li a:hover {
     <li><a href="passionProject.html"><i class="fa-solid fa-house"></i> Home</a></li>
     <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
     <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
   </ul>
 </nav>
 
     <main>
       <div class="content-block">
           <div class="image-block">
-              <h2>Starting From Scratch</h2>
+              <h1>Starting From Scratch</h1>
               <img src="./images/StartingFromScratchLogo.PNG" alt="Starting From Scratch Logo" width="350"/>
-          </div>
+              <h1>Lessons</h1> <!-- New heading for Lesson Plan -->
+              <a href="https://docs.google.com/presentation/d/1N-CR53GToKKwHojSmW0DbnOPaQxLTmFyGz7Bknk60-A/edit?usp=sharing" target="_blank">View Lesson Plan</a> <!-- Link to Google Slides -->
+            </div>
           <div class="article-block">
             <h1>Starting From Scratch - Empowering Kids with Coding</h1>
             <h3>
