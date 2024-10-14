@@ -38,6 +38,8 @@
     <ul>
       <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
       <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+      <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+      <li><a href="Calendar.html"><i class="fa-solid fa-calendar"></i> Calendar</a></li>
       <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
       <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
     </ul>
@@ -84,6 +86,31 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     };
+
+    function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("falling");
+  document.body.appendChild(snowflake);
+
+  // Randomize snowflake properties
+  const randomLeft = Math.random() * 100; // Position between 0% - 100%
+  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+
+  // Apply randomized styles
+  snowflake.style.left = `${randomLeft}%`;
+  snowflake.style.width = `${randomSize * 30}px`; 
+  snowflake.style.height = `${randomSize * 30}px`; 
+  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+
+  // Remove snowflake after animation ends
+  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+}
+
+// Generate snowflakes every 1500ms (1.5 seconds)
+setInterval(createSnowflake, 1500);
+
     </script>
         <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
 
