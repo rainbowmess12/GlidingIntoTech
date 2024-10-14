@@ -41,7 +41,7 @@
 
 body {
     font-family: "Gill Sans", sans-serif;
-    background: url('/images/IceBackground.png');
+    background: url('./images/IceBackground.png');
     color: #3f3f3f;
     line-height: 1.6;
     opacity: 0; /* Start with opacity 0 */
