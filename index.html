@@ -27,13 +27,15 @@
 
 
 <nav>
-  <ul>
-    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-    <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
-    <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-    <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+      <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+      <li><a href="Calendar.html"><i class="fa-solid fa-calendar"></i> Calendar</a></li>
+      <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+    </ul>
+  </nav>
 
 
     <main>
@@ -55,8 +57,9 @@
               <h2>My Gallery</h2>
               <div class="carousel">
                 <div class="carousel-wrapper">
-                    <img src="./images/GiadaJimenez2.PNG" class="active" alt="Image 1">
-                    <img src="./images/GiadaJimenez1.png" alt="Image 2">
+                    <img src="/images/TechSavvySeniorsCloseup.png" class="active" alt="Image 1">
+                    <img src="/images/BlockCodingScratch.png" class="active" alt="Image 2">
+                    <img src="./images/GiadaJimenez1.png" alt="Image 3">
                 </div>
                 <div class="carousel-buttons">
                     <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
@@ -68,19 +71,27 @@
           <div class="article-block">
             <h1>What is Gliding Into Tech?</h1>
             <h3>
-                Gliding Into Tech is my way of empowering others through technology. I'm Giada Jimenez, a passionate Latina in computer science, and my coding journey began back in ninth grade. Since then, I’ve been committed to helping others harness the power of technology. Through my involvement with my school’s Girls Who Code Club and the creation of multiple workshops, I focus on making tech accessible and engaging for all ages.
+                Gliding Into Tech is an empowering organization founded by Giada Jimenez, a passionate Latina in computer science. Inspired by her journey in coding, which began in ninth grade, Giada is dedicated to helping others harness the power of technology. Through her involvement with the school’s Girls Who Code Club and the creation of multiple workshops, she has focused on making technology accessible and engaging for all ages.
             </h3>
             <h3>
-                One of my key initiatives is Tech Savvy Seniors, a 10-lesson workshop I developed to help seniors navigate their smartphones with confidence. In these sessions, participants explore essential topics like artificial intelligence, software applications, and smartphone settings, giving them the tools to connect with loved ones and engage more easily with the digital world.
+                One of her key initiatives, Tech Savvy Seniors, is a comprehensive 10-lesson workshop designed to help seniors navigate their smartphones with confidence. Participants learn essential topics such as artificial intelligence, various software applications, and smartphone settings, enabling them to connect with loved ones and the digital world more effectively.
             </h3>
             <h3>
-                In my Starting from Scratch workshop, I introduce children to the exciting world of coding using the Scratch game engine. I teach block coding principles, encouraging young creators to develop their own projects and explore their imaginations. It’s a hands-on way to show them how fun and creative technology can be.
+                In her Starting from Scratch workshop, Giada introduces children to the exciting world of coding using the Scratch game engine. Here, she teaches block coding principles, allowing young creators to develop their own tangible projects and explore their imaginations.
             </h3>
             <h3>
-                As a figure skater, I’ve learned grace and determination—qualities that inspire the name Gliding Into Tech. I built this website from scratch using HTML, CSS, and AI, combining my coding skills with my passion for giving back to the community. Through all my work, my goal is to inspire and empower others, fostering a love for technology and innovation along the way.
+                With a background as a figure skater, Giada embodies the spirit of grace and determination, which is reflected in the name Gliding Into Tech. She coded this website from scratch using HTML, CSS, and AI, showcasing her skills while giving back to her community. Through all her efforts, Giada aims to inspire and empower individuals by fostering a love for technology and innovation.
             </h3>
           </div>
       </div>
+      <div class="snowflakes">
+        <!-- Create multiple snowflakes with different delays -->
+        <div class="snowflake" style="--x: 0.1; animation-duration: 10s; animation-delay: 0s;">❄️</div>
+        <div class="snowflake" style="--x: 0.4; animation-duration: 12s; animation-delay: 2s;">❄️</div>
+        <div class="snowflake" style="--x: 0.6; animation-duration: 15s; animation-delay: 4s;">❄️</div>
+        <div class="snowflake" style="--x: 0.2; animation-duration: 11s; animation-delay: 1s;">❄️</div>
+        <div class="snowflake" style="--x: 0.8; animation-duration: 14s; animation-delay: 3s;">❄️</div>
+    </div>
     </main>
 
     <footer>
@@ -173,6 +184,31 @@ window.onscroll = function() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     };
+
+    function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("falling");
+  document.body.appendChild(snowflake);
+
+  // Randomize snowflake properties
+  const randomLeft = Math.random() * 100; // Position between 0% - 100%
+  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+
+  // Apply randomized styles
+  snowflake.style.left = `${randomLeft}%`;
+  snowflake.style.width = `${randomSize * 30}px`; 
+  snowflake.style.height = `${randomSize * 30}px`; 
+  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+
+  // Remove snowflake after animation ends
+  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+}
+
+// Generate snowflakes every 1500ms (1.5 seconds)
+setInterval(createSnowflake, 1500);
+
     </script>
     <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
 </body>
