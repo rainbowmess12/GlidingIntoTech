@@ -41,8 +41,7 @@
 
 body {
     font-family: "Gill Sans", sans-serif;
-    background: linear-gradient(135deg, #f0e8ff 25%, transparent 25%, transparent 50%, #f0e8ff 50%, #f0e8ff 75%, transparent 75%, transparent), linear-gradient(to bottom, #f0e8ff, #d4caf9);
-background-size: 20px 20px, 100%; /* The first gradient controls the diagonal lines; the second controls the overall gradient */
+    background: url('/images/IceBackground.png');
     color: #3f3f3f;
     line-height: 1.6;
     opacity: 0; /* Start with opacity 0 */
@@ -59,11 +58,47 @@ body.fade-in {
     opacity: 1; /* End with full opacity */
 }
 
+/* Snowflake styling */
+.falling {
+  position: fixed;
+  top: -50px; /* Start snowflakes above the screen */
+  background-image: url('/images/pngegg.png'); /* Use your snowflake image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Allow interaction through snowflakes */
+  z-index: 1000;
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite;
+  transition: transform 0.3s ease-in-out; /* Smooth transition when hovered */
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/* Sway animation */
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+
 
       .workshops-block {
         text-align: center;
         padding: 20px;
-        background: linear-gradient(to right, #f8c8d0, #f0e8ff);
+        background: linear-gradient(to right, #b2c1f1, #d0dbf4);
         border-radius: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         width: 90%;
@@ -116,11 +151,11 @@ body.fade-in {
 
       /* Image block with hover effect */
       .image-block {
-        background: linear-gradient(to right, #f8e1ff, #b3c7e6);
+        background: linear-gradient(to right, #dbd7f4, #a1bbe2);
         border-radius: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         padding: 20px;
-        flex: 1 1 300px; /* Flex-grow, flex-shrink, and base width */
+        flex: 1 1 50px; /* Flex-grow, flex-shrink, and base width */
         text-align: center;
         transition: transform 0.4s ease; /* Smooth hover animation */
     }
@@ -135,11 +170,11 @@ body.fade-in {
       }
 
       .article-block {
-    background: linear-gradient(to right, #f8d3de, #e6c6e7);
+    background: linear-gradient(to right, #b2c4e7, #c6d2e7);
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     padding: 20px;
-    flex: 1 1 500px; /* Flex-grow, flex-shrink, and base width */
+    flex: 1 1 1px; /* Flex-grow, flex-shrink, and base width */
     transition: transform 0.3s ease;
 }
 .article-block h1 {
@@ -161,7 +196,7 @@ body.fade-in {
       }
 
       header {
-    background: linear-gradient(0deg, #f2a6c8, #e6b2d3);
+    background: linear-gradient(0deg, #adb4f6, #bdd6f1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,7 +234,7 @@ header:hover {
       }
 
       header h1:hover {
-  color: #f7d1dc; /* Change color on hover */
+  color: #c8cfef; /* Change color on hover */
   transform: scale(1.03); /* Image zoom on hover */
 }
 
@@ -216,7 +251,7 @@ header:hover {
       }
       
       nav {
-    background: linear-gradient(to right, #d3c7ef, #cdd4ef);
+    background: linear-gradient(to right, #c7d6ef, #cdd9ef);
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -230,7 +265,7 @@ header:hover {
 }
 
 nav:hover {
-    background: linear-gradient(to right, #b1a6dc, #b1bde6); /* Gradient changes on hover */
+  background: linear-gradient(to right, #aac0e3, #aabfe8);
     transform: scale(1.05); /* Scale up when hovered */
 }
 
@@ -279,6 +314,32 @@ nav ul li a:hover {
     padding: 15px; /* Padding for spacing */
     margin-bottom: 15px; /* Spacing between items */
     transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.content-wrapper {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center the items */
+  gap: 20px; /* Space between image and text */
+}
+
+.faq-item img {
+  max-width: 300px; /* Adjust the maximum width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners for the image */
+}
+
+.text-content {
+  flex: 1; /* Allow text content to take up remaining space */
+}
+
+.text-content h3 {
+  color: #3f3f3f; /* Color for title */
+  margin: 0; /* Remove default margin */
+}
+
+.text-content p {
+  color: #5f5f5f; /* Color for paragraph text */
+  line-height: 1.5; /* Increased line height for readability */
 }
 
 .faq-item:hover {
@@ -340,7 +401,7 @@ nav ul li a:hover {
 }
 
       footer {
-    background: linear-gradient(135deg, #25385b, #9989d2); /* Example gradient */
+    background: linear-gradient(135deg, #7690c2, #afbaea); /* Example gradient */
     color: #f4f4f4;
     text-align: center;
     padding: 20px;
