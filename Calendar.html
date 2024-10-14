@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Tech Savvy Seniors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styleguide.css">
+    <style>
+            .article-block {
+    background: linear-gradient(to right, #f8d3de, #e6c6e7);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    flex: 1 1 100px; /* Flex-grow, flex-shrink, and base width */
+    transition: transform 0.3s ease;
+}
+</style>
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <img src="./images/download-icon-website-buffer-loader-a-spinning-circle-to-download-information-on-the-website-png copy.png" alt="Loading..." />
+  </div>
+    
+    <header>
+      <a href="index.html">
+          <img src="./images/SlidingIntoTechLogo.PNG" alt="" width="150px" />
+      </a>
+      <a href="index.html">
+          <h1>Gliding Into Tech</h1>
+      </a>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+      <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+      <li><a href="Calendar.html"><i class="fa-solid fa-calendar"></i> Calendar</a></li>
+      <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="parent-container">
+        <div class="article-block">
+            <h1>Calendar</h1>
+        </div>
+        <div class="form-container" style="width: 100%; max-width: 1200px; margin: auto;">
+            <iframe src="https://calendar.google.com/calendar/embed?src=b1342f209e9108a1c4b2632261bbc8329b7b3177745805e8f115f2acea55506a%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+</main>
+
+
+    <footer>
+      <p>Copyright & copy: 2024 Gliding Into Tech. All rights reserved.</p>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fa-solid fa-circle-up"></i> Back to Top</button>
+    
+    <script>
+      // Fade-in effect and loader
+      window.onload = function() {
+          document.body.classList.add("fade-in");
+
+          // Hide loader after 2 seconds
+          setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+          }, 2000);
+      };
+             // Back to Top button functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = 'block'; // Show the button when scrolling down
+        } else {
+            backToTopBtn.style.display = 'none'; // Hide the button when at the top
+        }
+    };
+
+    backToTopBtn.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+
+    function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("falling");
+  document.body.appendChild(snowflake);
+
+  // Randomize snowflake properties
+  const randomLeft = Math.random() * 100; // Position between 0% - 100%
+  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+
+  // Apply randomized styles
+  snowflake.style.left = `${randomLeft}%`;
+  snowflake.style.width = `${randomSize * 30}px`; 
+  snowflake.style.height = `${randomSize * 30}px`; 
+  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+
+  // Remove snowflake after animation ends
+  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+}
+
+// Generate snowflakes every 1500ms (1.5 seconds)
+setInterval(createSnowflake, 1500);
+
+    </script>
+        <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
