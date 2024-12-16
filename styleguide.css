@@ -5,6 +5,21 @@
     scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+a {
+  text-decoration: none;
+  color: #5f819c;
+  transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+/*
+ .a :hover{
+  color: #4a6983;
+  transform: scale(1.03);
+}
+
+.a :active{
+  transform: scale(0.97);
+}
+*/
 /* Loader */
 #loader {
     position: fixed;
@@ -41,7 +56,7 @@
 
 body {
     font-family: "Gill Sans", sans-serif;
-    background: url('./images/IceBackground.png');
+    background: url('/images/IceBackground.png');
     color: #3f3f3f;
     line-height: 1.6;
     opacity: 0; /* Start with opacity 0 */
