@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Tech Savvy Seniors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styleguide.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader">
+      <img src="./images/download-icon-website-buffer-loader-a-spinning-circle-to-download-information-on-the-website-png copy.png" alt="Loading..." />
+    </div>
+
+    <header>
+      <a href="index.html">
+          <img src="./images/SlidingIntoTechLogo.PNG" alt="" width="150px" />
+      </a>
+      <a href="index.html">
+          <h1>Gliding Into Tech</h1>
+      </a>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+      <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+      <li><a href="Calendar.html"><i class="fa-solid fa-calendar"></i> Calendar</a></li>
+      <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      <li><a href="Locations.html"><i class="fa-solid fa-location-dot"></i> Locations</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="faq-item">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1>In Person: </h1>
+                <h2>Tech Savvy Seniors Workshops Locations</h2>
+                <h3>Sunrise of Franklin Lakes</h3>
+                  <p>
+                    <a href="https://www.sunriseseniorliving.com/communities/nj/sunrise-of-franklin-lakes??utm_source=directory_listings&utm_medium=clicks&utm_campaign=google" target="_blank" rel="noopener noreferrer">
+                      728 Franklin Ave, Franklin Lakes, NJ 07417
+                    </a>
+                  </p>
+                
+                  <h3>Sunrise of Upper Saddle River</h3>
+                  <p>
+                    <a href="https://www.sunriseseniorliving.com/communities/nj/brighton-gardens-of-saddle-river" target="_blank" rel="noopener noreferrer">
+                      5 Boroline Road, Saddle River, NJ 07458
+                    </a>
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="faq-item">
+            <div class="content-wrapper">
+                <div class="text-content">
+                  <h2>Starting From Scratch Workshops Locations</h2>
+                  <h3>Oasis</h3>
+                  <p>
+                    <a href="https://oasisnj.org/" target="_blank" rel="noopener noreferrer">
+                      59 Mill Street, Paterson, NJ 07501
+                    </a>
+                  </p>
+            </div>
+        </div>
+    </div>
+    <div class="faq-item">
+      <div class="content-wrapper">
+          <div class="text-content">
+              <h1>Virtual: </h1>
+              <h2>Tech Savvy Seniors Workshops Locations</h2>
+              <h3>Southern Regional Technology and Recreation Complex
+                Maryland-National Capital Park and Planning Commission
+                Department of Parks and Recreation</h3>
+                <p>
+                  <a href="https://www.pgparks.com/facilities/southern-regional-technology-and-recreation-complex" target="_blank" rel="noopener noreferrer">
+                    7011 Bock Road, Fort Washington, MD
+                  </a>
+                </p>
+          </div>
+      </div>
+  </div>
+</main>
+
+  
+
+    <footer>
+      <p>Copyright & copy: 2024 Gliding Into Tech. All rights reserved.</p>
+    </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fa-solid fa-circle-up"></i> Back to Top</button>
+    
+    <script>
+      // Fade-in effect and loader
+      window.onload = function() {
+          document.body.classList.add("fade-in");
+
+          // Hide loader after 2 seconds
+          setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+          }, 2000);
+      };
+             // Back to Top button functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = 'block'; // Show the button when scrolling down
+        } else {
+            backToTopBtn.style.display = 'none'; // Hide the button when at the top
+        }
+    };
+
+    backToTopBtn.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+
+    function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("falling");
+  document.body.appendChild(snowflake);
+
+  // Randomize snowflake properties
+  const randomLeft = Math.random() * 100; // Position between 0% - 100%
+  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+
+  // Apply randomized styles
+  snowflake.style.left = `${randomLeft}%`;
+  snowflake.style.width = `${randomSize * 30}px`; 
+  snowflake.style.height = `${randomSize * 30}px`; 
+  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+
+  // Remove snowflake after animation ends
+  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+}
+
+// Generate snowflakes every 1500ms (1.5 seconds)
+setInterval(createSnowflake, 1500);
+
+    </script>
+        <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
+</body>
+</html>
