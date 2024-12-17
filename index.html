@@ -1,76 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Colors United Painting</title>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
-    </head>    
-    <style>
-        .container {
-            text-align: center; /* Center-align text inside the container */
-        }
-        ul {
-            font-size: 20px; /* Adjust the size of the text */
-        }
-        li {
-            margin: 5px 0; /* Adds vertical spacing between items */
-            padding: 0; /* Removes extra padding */
-            text-align: left; /* Ensures consistent text alignment for longer text */
-        }
-    </style>
-<body>
-    <header>
-        <!-- Logo -->
-        <a href="/index.html"><img src="./images/ColorsUnitedPaintingLogo.png" alt="Colors United Painting Logo"></a>
-        <a href="/index.html"><h1>Colors United Painting</h1></a>
-        <a href="/index.html"><strong><p>Let us turn your house into a home</p></strong></a>
-    </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gliding Into Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styleguide.css">
+</head>
+<body>  
 
-    <nav>
-        <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="AboutUs.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
-          <li><a href="Testimonials.html"><i class="fa-solid fa-comment"></i> Testimonials</a></li>
-          <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
-          <li><a href="ContactInfo.html"><i class="fa-solid fa-envelope"></i> Contact Info</a></li>
-        </ul>
-      </nav>
+  <!-- Loader -->
+  <div id="loader">
+    <img src="./images/download-icon-website-buffer-loader-a-spinning-circle-to-download-information-on-the-website-png copy.png" alt="Loading..." />
+  </div>
 
-      <div class="container">
-        <section>
-        <h2>Services We Provide</h2>
-        <ul>
-            <li><strong>Interior and Exterior Priming and Painting</strong></li>
-            <li><strong>Paint Color and Interior Decorating Consultation</strong></li>
-            <li><strong>Drywall Installation</strong></li>
-            <li><strong>Wallpaper Removal and Installation</strong></li>
-            <li><strong>Window and Door Installation</strong></li>
-            <li><strong>Framing</strong></li>
-            <li><strong>Floor Removal and Installation</strong></li>
-            <li><strong>Epoxy Floor Coatings</strong></li>
-            <li><strong>Power Washing</strong></li>
-            <li><strong>Deck and Fence Staining</strong></li>
-            <li><strong>Handyman Services</strong></li>
-        </ul>
-    </section>
-        <h2>Certifications, Memberships, Publications</h2>
-        <ul>
-            <li><strong>MBE Certified</strong></li>
-            <li><strong>Home Depot Pro Referral member</strong></li>
-            <li><strong>Elmwood Park Chamber of Commerce</strong></li>
-            <li><strong>Randolph Chamber of Commerce</strong></li>
-            <li><strong>BNI</strong></li>
-            <li><strong>Morris County Hispanic-American Chamber of Commerce</strong></li>
-            <li><strong>January 2025 feature in “Randolph Neighbor”</strong></li>
-        </ul>
+  <header>
+    <a href="index.html">
+        <img src="./images/SlidingIntoTechLogo.PNG" alt="" width="150px" />
+    </a>
+    <a href="index.html">
+        <h1>Gliding Into Tech</h1>
+    </a>
+</header>
+
+
+<nav>
+    <ul>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
+        <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
+        <li><a href="Calendar.html"><i class="fa-solid fa-calendar"></i> Calendar</a></li>
+        <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+        <li><a href="Locations.html"><i class="fa-solid fa-location-dot"></i> Locations</a></li>
+      </ul>
+  </nav>
+
+
+    <main>
+            <div class="workshops-block">
+              <h1>Workshops</h1>
+              <a href="TechSavvySeniors.html">
+                  <img src="./images/TechSavvySeniorsLogo.png" alt="Tech Savvy Seniors Logo" width="300px" />
+              </a>
+              <a href="StartingFromScratch.html">
+                  <img src="./images/StartingFromScratchLogo.PNG" alt="Starting From Scratch Logo" width="300px" />
+              </a>
+              <a href="GirlsWhoCode.html">
+                  <img src="./images/GirlsWhoCodeLogo.PNG" alt="Girls Who Code Logo" width="300px" />
+              </a>
+          </div>
+      
+      <div class="content-block">
+          <div class="image-block">
+              <h2>My Gallery</h2>
+              <div class="carousel">
+                <div class="carousel-wrapper">
+                    <img src="./images/StartingFromScratchWorkshop.png" alt="Image 4">
+                    <img src="/images/TechSavvySeniorsCloseup.png" class="active" alt="Image 1">
+                    <img src="/images/BlockCodingScratch.png" class="active" alt="Image 2">
+                    <img src="./images/GiadaJimenez1.png" alt="Image 3">
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+            
+          </div>
+          <div class="article-block">
+            <h1>What is Gliding Into Tech?</h1>
+            <h3>
+                Gliding Into Tech is an empowering organization founded by Giada Jimenez, a passionate Latina in computer science. Inspired by her journey in coding, which began in ninth grade, Giada is dedicated to helping others harness the power of technology. Through her involvement with the school’s Girls Who Code Club and the creation of multiple workshops, she has focused on making technology accessible and engaging for all ages.
+            </h3>
+            <h3>
+                One of her key initiatives, Tech Savvy Seniors, is a comprehensive 10-lesson workshop designed to help seniors navigate their smartphones with confidence. Participants learn essential topics such as artificial intelligence, various software applications, and smartphone settings, enabling them to connect with loved ones and the digital world more effectively.
+            </h3>
+            <h3>
+                In her Starting from Scratch workshop, Giada introduces children to the exciting world of coding using the Scratch game engine. Here, she teaches block coding principles, allowing young creators to develop their own tangible projects and explore their imaginations.
+            </h3>
+            <h3>
+                With a background as a figure skater, Giada embodies the spirit of grace and determination, which is reflected in the name Gliding Into Tech. She coded this website from scratch using HTML, CSS, and AI, showcasing her skills while giving back to her community. Through all her efforts, Giada aims to inspire and empower individuals by fostering a love for technology and innovation.
+            </h3>
+          </div>
+      </div>
+      <div class="snowflakes">
+        <!-- Create multiple snowflakes with different delays -->
+        <div class="snowflake" style="--x: 0.1; animation-duration: 10s; animation-delay: 0s;">❄️</div>
+        <div class="snowflake" style="--x: 0.4; animation-duration: 12s; animation-delay: 2s;">❄️</div>
+        <div class="snowflake" style="--x: 0.6; animation-duration: 15s; animation-delay: 4s;">❄️</div>
+        <div class="snowflake" style="--x: 0.2; animation-duration: 11s; animation-delay: 1s;">❄️</div>
+        <div class="snowflake" style="--x: 0.8; animation-duration: 14s; animation-delay: 3s;">❄️</div>
     </div>
-    
+    </main>
 
     <footer>
-        <p>&copy; 2024 Colors United Painting. All Rights Reserved.</p>
+      <p>Copyright & copy: 2024 Gliding Into Tech. All rights reserved.</p>
     </footer>
+    <button class="back-to-top" id="back-to-top"><i class="fa-solid fa-circle-up"></i> Back to Top</button>
+    <script>
+  // JavaScript for opacity transition
+  window.onload = function() {
+      document.body.classList.add("fade-in");
+
+      // Hide loader after 2 seconds
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+      }, 2000);
+    };
+
+    // JavaScript for carousel functionality
+    let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel img");
+const carouselWrapper = document.querySelector(".carousel-wrapper");
+
+// Clone the first and last slides for seamless looping
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+carouselWrapper.appendChild(firstClone); // Append the clone of the first slide at the end
+carouselWrapper.insertBefore(lastClone, slides[0]); // Prepend the clone of the last slide at the beginning
+
+// Update the total number of slides to include the clones
+const totalSlides = slides.length + 2;
+
+// Function to update the carousel to the desired slide
+function showSlide(index) {
+    // Ensure the currentSlide wraps around correctly
+    currentSlide = index;
+
+    // Apply the transform for sliding
+    const offset = -currentSlide * 100;
+    carouselWrapper.style.transform = `translateX(${offset}%)`;
+
+    // Handle seamless looping when scrolling right (from the last real slide to the first)
+    if (currentSlide === totalSlides - 1) { // If it's on the cloned first slide
+        setTimeout(() => {
+            carouselWrapper.style.transition = 'none'; // Disable transition for instant reset
+            currentSlide = 1; // Reset to the actual first slide
+            carouselWrapper.style.transform = `translateX(-100%)`; // Instantly go to the first real slide
+        }, 500); // Wait for the transition to complete
+    }
+
+    // Handle seamless looping when scrolling left (from the first real slide to the last)
+    else if (currentSlide === 0) { // If it's on the cloned last slide
+        setTimeout(() => {
+            carouselWrapper.style.transition = 'none'; // Disable transition for instant reset
+            currentSlide = totalSlides - 2; // Reset to the actual last slide
+            const lastOffset = -currentSlide * 100;
+            carouselWrapper.style.transform = `translateX(${lastOffset}%)`; // Instantly go to the last real slide
+        }, 500); // Wait for the transition to complete
+    } else {
+        // Enable smooth transitions for normal scrolling
+        carouselWrapper.style.transition = 'transform 0.5s ease';
+    }
+}
+
+// Function for going to the next slide
+function nextSlide() {
+    showSlide(currentSlide + 1); // Move to the next slide
+}
+
+// Function for going to the previous slide
+function prevSlide() {
+    showSlide(currentSlide - 1); // Move to the previous slide
+}
+
+// Set interval for automatic sliding
+setInterval(nextSlide, 8000); // Change slides every 8 seconds
+
+
+// Back to Top button functionality
+const backToTopBtn = document.getElementById('back-to-top');
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = 'block'; // Show the button when scrolling down
+    } else {
+        backToTopBtn.style.display = 'none'; // Hide the button when at the top
+    }
+};
+
+
+    backToTopBtn.onclick = function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+
+    function createSnowflake() {
+  const snowflake = document.createElement("div");
+  snowflake.classList.add("falling");
+  document.body.appendChild(snowflake);
+
+  // Randomize snowflake properties
+  const randomLeft = Math.random() * 100; // Position between 0% - 100%
+  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+
+  // Apply randomized styles
+  snowflake.style.left = `${randomLeft}%`;
+  snowflake.style.width = `${randomSize * 30}px`; 
+  snowflake.style.height = `${randomSize * 30}px`; 
+  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+
+  // Remove snowflake after animation ends
+  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+}
+
+// Generate snowflakes every 1500ms (1.5 seconds)
+setInterval(createSnowflake, 1500);
+
+    </script>
     <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
 </body>
 </html>
