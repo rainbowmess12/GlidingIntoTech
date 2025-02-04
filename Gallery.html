@@ -24,7 +24,8 @@
       </a>
   </header>
 
-  <nav>
+<nav>
+    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
     <ul>
         <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
@@ -33,8 +34,8 @@
         <li><a href="Contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
         <li><a href="FAQ.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
         <li><a href="Locations.html"><i class="fa-solid fa-location-dot"></i> Locations</a></li>
-      </ul>
-  </nav>
+    </ul>
+</nav>
 
   <main>
     <div class="faq-item">
@@ -126,6 +127,11 @@
 // Generate snowflakes every 1500ms (1.5 seconds)
 setInterval(createSnowflake, 1500);
 
+        // Toggle the mobile menu
+function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("show");
+}
+        
     </script>
         <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
 </body>
