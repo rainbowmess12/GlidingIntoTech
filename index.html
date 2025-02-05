@@ -27,8 +27,7 @@
 
 
 <nav>
-    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
-    <ul>
+       <ul>
         <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="AboutMe.html"><i class="fa-solid fa-circle-info"></i> About Me</a></li>
         <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
@@ -87,15 +86,6 @@
                 With a background as a figure skater, Giada embodies the spirit of grace and determination, which is reflected in the name Gliding Into Tech. She coded this website from scratch using HTML, CSS, and AI, showcasing her skills while giving back to her community. Through all her efforts, Giada aims to inspire and empower individuals by fostering a love for technology and innovation.
             </h3>
           </div>
-      </div>
-      <div class="snowflakes">
-        <!-- Create multiple snowflakes with different delays -->
-        <div class="snowflake" style="--x: 0.1; animation-duration: 10s; animation-delay: 0s;">❄️</div>
-        <div class="snowflake" style="--x: 0.4; animation-duration: 12s; animation-delay: 2s;">❄️</div>
-        <div class="snowflake" style="--x: 0.6; animation-duration: 15s; animation-delay: 4s;">❄️</div>
-        <div class="snowflake" style="--x: 0.2; animation-duration: 11s; animation-delay: 1s;">❄️</div>
-        <div class="snowflake" style="--x: 0.8; animation-duration: 14s; animation-delay: 3s;">❄️</div>
-    </div>
     </main>
 
     <footer>
@@ -190,35 +180,40 @@ window.onscroll = function() {
     };
 
     function createSnowflake() {
-  const snowflake = document.createElement("div");
-  snowflake.classList.add("falling");
-  document.body.appendChild(snowflake);
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("falling");
+    document.body.appendChild(snowflake);
 
-  // Randomize snowflake properties
-  const randomLeft = Math.random() * 100; // Position between 0% - 100%
-  const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
-  const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
-  const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
+    // Randomize snowflake properties
+    const randomLeft = Math.random() * 100; // Position between 0% - 100%
+    const randomSize = Math.random() * 1 + 0.2; // Scale between 0.2 and 1
+    const randomDuration = Math.random() * 10 + 5; // Fall duration between 5-12s
+    const randomSway = Math.random() * 4 + 2; // Sway duration between 2-6s
 
-  // Apply randomized styles
-  snowflake.style.left = `${randomLeft}%`;
-  snowflake.style.width = `${randomSize * 30}px`; 
-  snowflake.style.height = `${randomSize * 30}px`; 
-  snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
+    // Apply randomized styles
+    snowflake.style.left = `${randomLeft}%`;
+    snowflake.style.width = `${randomSize * 30}px`; 
+    snowflake.style.height = `${randomSize * 30}px`; 
+    snowflake.style.animationDuration = `${randomDuration}s, ${randomSway}s`;
 
-  // Remove snowflake after animation ends
-  setTimeout(() => snowflake.remove(), randomDuration * 1000);
+    // Remove snowflake when animation ends to prevent accumulation
+    snowflake.addEventListener("animationend", () => {
+        snowflake.remove();
+    });
 }
 
 // Generate snowflakes every 1500ms (1.5 seconds)
 setInterval(createSnowflake, 1500);
+
 
 // Toggle the mobile menu
 function toggleMenu() {
     document.querySelector("nav ul").classList.toggle("show");
 }
 
-
+function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("show");
+}
     </script>
     <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
 </body>
