@@ -329,12 +329,14 @@ nav ul li a:hover {
     padding: 15px; /* Padding for spacing */
     margin-bottom: 15px; /* Spacing between items */
     transition: transform 0.2s; /* Animation for hover effect */
+    
 }
 
 .content-wrapper {
   display: flex; /* Use flexbox for layout */
   align-items: center; /* Vertically center the items */
   gap: 20px; /* Space between image and text */
+  max-width: 500px;
 }
 
 .faq-item img {
@@ -521,50 +523,132 @@ nav ul li a:hover {
     transform: scale(0.95); /* Slightly shrink when clicked */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Decrease shadow on click */
 }
-
-/* ========== NAVIGATION ========== */
+/* ========== BASE NAVIGATION STYLES ========== */
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the nav */
   align-items: center;
   padding: 10px 20px;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Desktop Menu (Default) */
 nav ul {
-  display: flex; /* Show horizontal menu on desktop */
+  display: flex; /* Show menu in a row on desktop */
   gap: 20px;
 }
 
 /* Hide hamburger menu on desktop */
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
 }
 
 /* ========== MOBILE STYLES ========== */
 @media (max-width: 768px) {
-  .hamburger {
-      display: block; /* Show hamburger icon on mobile */
-  }
-
   nav ul {
-      display: none; /* Hide menu initially */
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(to right, #c7d6ef, #cdd9ef);
-      border-radius: 0 0 20px 20px;
-      padding: 10px 0;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      flex-direction: row; /* Keep items in a row */
+      flex-wrap: wrap; /* Allow wrapping */
+      justify-content: center; /* Center the menu */
+      font-size: 14px; /* Make text smaller */
+      gap: 10px; /* Reduce space between items */
+      padding: 5px 0;
   }
 
-  nav ul.show {
-      display: flex; /* Show menu when toggled */
+  nav ul li {
+      padding: 8px; /* Reduce padding */
+      font-size: 14px; /* Adjust font size */
+  }
+
+  /* Make sure items don't overflow */
+  nav {
+      flex-direction: column;
+  }
+
+  /* Shrink the navigation bar */
+  nav ul {
+      width: 100%;
+  }
+
+  /* Make the hamburger menu visible */
+  .hamburger {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+  }
+}
+
+
+/* ========== CENTER FAQ-ITEM ========== */
+.faq-item {
+  background: linear-gradient(to right, #eafcff, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 90%; /* Keeps it responsive */
+  max-width: 800px; /* Prevents it from getting too wide */
+  margin: 0 auto 20px auto; /* Centers the entire box */
+  text-align: center; /* Centers text inside */
+  display: flex;
+  flex-direction: column; /* Stack content */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+}
+
+/* ========== CENTER CONTENT-WRAPPER ========== */
+.content-wrapper {
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  justify-content: center; /* Centers items horizontally */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  gap: 20px; /* Adds spacing */
+  width: 100%;
+  max-width: 800px;
+  text-align: center; /* Centers text */
+}
+
+/* Ensure images resize properly */
+.content-wrapper img {
+  max-width: 300px; /* Prevents images from overflowing */
+  height: auto;
+  border-radius: 10px;
+  display: block; /* Prevents inline spacing issues */
+  margin: 0 auto; /* Centers images */
+}
+
+/* Center text */
+.text-content {
+  flex: 1;
+  min-width: 250px;
+  text-align: center; /* Centers text */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items inside */
+  justify-content: center;
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 768px) {
+  .content-wrapper {
+      flex-direction: column; /* Stack items vertically on small screens */
+      text-align: center; /* Center text */
+  }
+
+  .content-wrapper img {
+      width: 100%; /* Make images responsive */
+  }
+
+  .text-content h3 {
+      font-size: 18px; /* Slightly smaller heading */
+  }
+
+  .text-content p {
+      font-size: 14px; /* Adjust paragraph font for better fit */
+      padding: 0 10px; /* Add padding to prevent text from touching edges */
   }
 }
